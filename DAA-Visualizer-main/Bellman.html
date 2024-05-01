@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bellman-Ford Visualizer</title>
+  <style >
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  canvas {
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+  }
+
+  .control-panel {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .control-panel button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .user-input {
+    margin-bottom: 20px;
+  }
+
+  .user-input input, .user-input button {
+    padding: 8px;
+    margin-right: 4px;
+  }
+
+  .info {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  </style>
+</head>
+<body>
+  <div class="user-input">
+    <input id="numVertices" type="number" min="1" placeholder="Number of Vertices">
+    <button id="generateGraph">Generate Graph</button>
+    <input id="sourceNode" type="number" min="0" placeholder="Source Node">
+    <input id="destNode" type="number" min="0" placeholder="Destination Node">
+    <input id="edgeWeight" type="number" placeholder="Weight">
+    <button id="addEdge">Add Edge</button>
+  </div>
+
+  <div class="container">
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <div class="control-panel">
+      <button id="runAlgorithm">Run Algorithm</button>
+      <button id="resetGraph">Reset Graph</button>
+      <button id="showShortestPaths">Show Shortest Paths</button>
+      <div class="info">
+        <p>Passes Left: <span id="passesLeft">5</span></p>
+        <p>Shortest Paths: <span id="shortestPaths">Not yet calculated</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js">
+     </script>
+</body>
+</html>
